@@ -1,13 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1>Adopt a Pet</h1>
-    <p>Looking for a new furry friend? Check out our adoption section for animals in need of a loving home.</p>
-</div>
-<div class="container">
-    <h2>Available Pets</h2>
-    <p>View our list of adorable pets waiting for their forever home.</p>
-    <!-- Here you could include more detailed information or a link to a database of pets -->
+<div class="container my-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1>Adopt a Pet</h1>
+        <p class="lead">Meet our adorable pets who are looking for a loving home. Browse through the available pets and find your new best friend!</p>
+    </div>
+
+    <!-- Available Pets Section -->
+    <h2 class="mb-4">Available Dogs</h2>
+    <div class="row">
+        <!-- Dog 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/dog_1.jpg') }}" class="card-img-top img-fluid" alt="Lab Puppy" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Buddy</h5>
+                    <p class="card-text">Buddy is a young and energetic Labrador puppy, eager to learn and always ready for fun. He loves to play and explore his surroundings.</p>
+                    <p><strong>Gender:</strong> Male</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dog 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/dog_2.jpg') }}" class="card-img-top img-fluid" alt="American Eskimo" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Bella</h5>
+                    <p class="card-text">Bella is a beautiful American Eskimo, known for her friendly and affectionate nature. She enjoys being around people and is always ready for a cuddle.</p>
+                    <p><strong>Gender:</strong> Female</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dog 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/dog_3.jpg') }}" class="card-img-top img-fluid" alt="Lab Mix" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Max</h5>
+                    <p class="card-text">Max is a friendly and adventurous Lab mix who loves to explore and go on walks. He's great with other dogs and loves to be outdoors.</p>
+                    <p><strong>Gender:</strong> Male</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more pets as needed -->
 </div>
 {% endblock %}

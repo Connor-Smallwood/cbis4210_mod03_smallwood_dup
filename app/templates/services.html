@@ -1,17 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1>Our Services</h1>
-    <p>We offer a variety of services to meet the needs of your pets, including grooming, training sessions, and veterinary care.</p>
-</div>
-<div class="container">
-    <h2>Grooming</h2>
-    <p>Professional grooming services for all pet types, ensuring your pet looks its best.</p>
-    <h2>Training</h2>
-    <p>Offering beginner to advanced training classes for dogs and cats.</p>
-    <h2>Veterinary Care</h2>
-    <p>Full-service clinic offering check-ups, vaccinations, and emergency care.</p>
+<div class="container my-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1>Our Services</h1>
+        <p class="lead">Explore the variety of services we offer for your beloved pets, ensuring their health, happiness, and well-being.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="row">
+        <!-- Grooming Service -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/dog_groom.jpg') }}" class="card-img-top" alt="Grooming Service">
+                <div class="card-body">
+                    <h5 class="card-title">Grooming</h5>
+                    <p class="card-text">Our professional grooming service ensures that your pet looks and feels their best. From bathing to haircuts, we take care of everything.</p>
+                    <p><strong>Price:</strong> $50</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Service -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/dog_training.jpg') }}" class="card-img-top" alt="Dog Training Service">
+                <div class="card-body">
+                    <h5 class="card-title">Training</h5>
+                    <p class="card-text">Our training programs are designed to help your dog learn obedience, agility, and socialization in a friendly environment.</p>
+                    <p><strong>Price:</strong> $35 per hour</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Veterinary Care Service -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/vet.jpg') }}" class="card-img-top" alt="Veterinary Care Service">
+                <div class="card-body">
+                    <h5 class="card-title">Veterinary Care</h5>
+                    <p class="card-text">Our full-service veterinary clinic offers checkups, vaccinations, and emergency care to keep your pet healthy and happy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
-tml>

@@ -1,16 +1,106 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1>Need Help?</h1>
-    <p>Have questions? Our FAQ and support resources can help you find the answers.</p>
-</div>
-<div class="container">
-    <h2>FAQ</h2>
-    <p>Find answers to our most frequently asked questions.</p>
-    <h2>Contact Us</h2>
-    <p>Can't find what you're looking for? Contact our support team.</p>
-    <p>Email: support@petworld.com</p>
-    <p>Phone: (123) 456-7890</p>
+<div class="container my-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1>Help & Support</h1>
+        <p class="lead">If you have any questions or need assistance, we’re here to help. Browse through our FAQs or contact us directly for more support.</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2 class="mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+        <!-- FAQ 1 -->
+        <div class="card">
+            <div class="card-header" id="faqHeadingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                        What are your store hours?
+                    </button>
+                </h2>
+            </div>
+
+            <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Our store is open Monday through Saturday from 9:00 AM to 7:00 PM, and Sunday from 10:00 AM to 5:00 PM.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="card">
+            <div class="card-header" id="faqHeadingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                        What services do you offer?
+                    </button>
+                </h2>
+            </div>
+            <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                    We offer a variety of services including grooming, training, doggy daycare, and veterinary care. You can view the full details on our Services page.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="card">
+            <div class="card-header" id="faqHeadingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                        How do I adopt a pet?
+                    </button>
+                </h2>
+            </div>
+            <div id="faqCollapseThree" class="collapse" aria-labelledby="faqHeadingThree" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can browse the available pets on our Adoptions page. Once you find a pet you'd like to adopt, visit us in-store or contact us to start the adoption process.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="card">
+            <div class="card-header" id="faqHeadingFour">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                        What are your grooming prices?
+                    </button>
+                </h2>
+            </div>
+            <div id="faqCollapseFour" class="collapse" aria-labelledby="faqHeadingFour" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Grooming services start at $50. For more details on grooming packages, visit our Services page or contact us directly.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="card">
+            <div class="card-header" id="faqHeadingFive">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                        How can I contact customer support?
+                    </button>
+                </h2>
+            </div>
+            <div id="faqCollapseFive" class="collapse" aria-labelledby="faqHeadingFive" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can contact us by email at support@petworld.com or by phone at (123) 456-7890. We're available Monday through Saturday from 9:00 AM to 6:00 PM.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="mt-5">
+        <h2>Contact Us</h2>
+        <p>If you couldn’t find the answer to your question, please reach out to us for further assistance.</p>
+        <ul class="list-unstyled">
+            <li><strong>Email:</strong> support@petworld.com</li>
+            <li><strong>Phone:</strong> (123) 456-7890</li>
+        </ul>
+    </div>
 </div>
 {% endblock %}

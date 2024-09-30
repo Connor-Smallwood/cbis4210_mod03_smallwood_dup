@@ -1,16 +1,131 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron">
-    <h1>Our Products</h1>
-    <p>Explore our extensive range of products tailored for your pet's needs, from food to fun toys.</p>
-</div>
-<div class="container">
-    <h2>Food</h2>
-    <p>Premium dog and cat food from leading brands.</p>
-    <h2>Accessories</h2>
-    <p>Everything from leashes and collars to bedding and bowls.</p>
-    <h2>Toys</h2>
-    <p>A variety of fun toys to keep your pet happy and engaged.</p>
+<div class="container my-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1>Our Products</h1>
+        <p class="lead">Browse through our selection of high-quality products for your pets, including food, accessories, and toys.</p>
+    </div>
+
+    <!-- Food Section -->
+    <h2 class="mb-4">Food</h2>
+    <div class="row">
+        <!-- Food Product 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/food_1.jpg') }}" class="card-img-top img-fluid" alt="Premium Dog Food" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Premium Dog Food</h5>
+                    <p class="card-text">A top-quality dog food packed with essential nutrients for your dog's health and well-being.</p>
+                    <p><strong>Price:</strong> $25.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Product 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/food_2.jpg') }}" class="card-img-top img-fluid" alt="Grain-Free Dog Food" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Grain-Free Dog Food</h5>
+                    <p class="card-text">A delicious grain-free option for dogs, formulated for optimal nutrition and digestion.</p>
+                    <p><strong>Price:</strong> $19.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Product 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/food_3.jpg') }}" class="card-img-top img-fluid" alt="Organic Dog Food" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Organic Dog Food</h5>
+                    <p class="card-text">An organic, nutrient-rich food blend to keep your dog healthy and active.</p>
+                    <p><strong>Price:</strong> $12.99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessories Section -->
+    <h2 class="mb-4">Accessories</h2>
+    <div class="row">
+        <!-- Example Accessory 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/accessory_1.jpg') }}" class="card-img-top img-fluid" alt="Dog Leash" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Durable Dog Leash</h5>
+                    <p class="card-text">A strong and durable leash designed for safety and comfort during walks.</p>
+                    <p><strong>Price:</strong> $15.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Accessory 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/accessory_2.jpg') }}" class="card-img-top img-fluid" alt="Dog Collar" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Comfort Dog Collar</h5>
+                    <p class="card-text">A soft and adjustable dog collar, perfect for all sizes of dogs.</p>
+                    <p><strong>Price:</strong> $9.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Accessory 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/accessory_3.jpg') }}" class="card-img-top img-fluid" alt="Dog Bed" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Luxury Dog Bed</h5>
+                    <p class="card-text">A cozy and comfortable bed for your dog to relax and sleep in.</p>
+                    <p><strong>Price:</strong> $39.99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toys Section -->
+    <h2 class="mb-4">Toys</h2>
+    <div class="row">
+        <!-- Example Toy 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/toy_1.jpg') }}" class="card-img-top img-fluid" alt="Chew Toy" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Chew Toy</h5>
+                    <p class="card-text">A durable chew toy that keeps your dog entertained and strengthens their teeth.</p>
+                    <p><strong>Price:</strong> $7.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Toy 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/toy_2.jpg') }}" class="card-img-top img-fluid" alt="Fetch Ball" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Fetch Ball</h5>
+                    <p class="card-text">A bouncy ball perfect for games of fetch with your dog.</p>
+                    <p><strong>Price:</strong> $4.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Toy 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/toy_3.jpg') }}" class="card-img-top img-fluid" alt="Squeaky Toy" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title">Squeaky Toy</h5>
+                    <p class="card-text">A fun squeaky toy that provides hours of entertainment for your dog.</p>
+                    <p><strong>Price:</strong> $5.99</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

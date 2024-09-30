@@ -1,9 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="jumbotron text-center">
-    <h1>Welcome to Pet Emporium!</h1>
-    <p>Your one-stop shop for all your pet care needs.</p>
-    <a href="{{ url_for('main.services') }}" class="btn btn-primary">Explore Our Services</a>
+<div class="container my-5">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1>Welcome to Pet World!</h1>
+        <p class="lead">Your one-stop shop for all things pets, from products to services, and more.</p>
+    </div>
+
+    <!-- Logo and Brief Description Section -->
+    <div class="text-center mb-5">
+        <img src="{{ url_for('static', filename='images/pet_world.png') }}" alt="Pet World Logo" style="max-height: 150px;">
+        <h2 class="my-3">About Pet World</h2>
+        <p class="lead">At Pet World, we are passionate about pets. We offer a wide variety of high-quality products and services to keep your pets healthy, happy, and well cared for. Whether you're looking to adopt a new friend or find the perfect pet supplies, we have everything you need to provide the best for your furry companions.</p>
+    </div>
+
+    <!-- Other Sections -->
+    <div class="row">
+        <!-- About Us Section -->
+        <div class="col-md-4 mb-4">
+            <h3>About Us</h3>
+            <p>We are a family-owned pet shop that has been serving the community for over 10 years. Learn more about our story and mission.</p>
+            <a href="{{ url_for('main.about') }}" class="btn btn-primary">Learn More</a>
+        </div>
+
+        <!-- Services Section -->
+        <div class="col-md-4 mb-4">
+            <h3>Our Services</h3>
+            <p>Explore our grooming, training, and veterinary services that ensure your pets receive the best care possible.</p>
+            <a href="{{ url_for('main.services') }}" class="btn btn-primary">Our Services</a>
+        </div>
+
+        <!-- Products Section -->
+        <div class="col-md-4 mb-4">
+            <h3>Our Products</h3>
+            <p>We offer a wide range of high-quality pet products, from food to toys and accessories. Check out our catalog today!</p>
+            <a href="{{ url_for('main.products') }}" class="btn btn-primary">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Adoptions Section -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>Adopt a Pet</h3>
+            <p>Looking to add a new furry friend to your family? Check out the adorable pets available for adoption today!</p>
+            <a href="{{ url_for('main.adoptions') }}" class="btn btn-success">View Available Pets</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
