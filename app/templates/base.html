@@ -8,29 +8,12 @@
     <!-- Include Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Link to custom template CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-
-    <!-- Additional CSS files from the template -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom-template.css') }}">
-
-    <!-- Add styles for sticky footer -->
     <style>
-        /* Make sure body and html are at least 100% of the viewport height */
-        html, body {
-            height: 100%;
-        }
-        /* Wrapper ensures the footer stays at the bottom */
-        .wrapper {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        .content {
-            flex: 1;
+        body {
+            background-color: white;
         }
         .footer {
-            background-color: #007bff; /* Blue background */
+            background-color: #007bff;
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -39,55 +22,36 @@
 </head>
 <body>
 
-    <!-- Wrapper for sticky footer layout -->
-    <div class="wrapper">
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">
-                <img src="{{ url_for('static', filename='images/pet_world.png') }}" alt="Pet World Logo" height="50">
-                Pet World
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.about') }}">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.services') }}">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.products') }}">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.adoptions') }}">Adoptions</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.help_page') }}">Help</a></li>
-                </ul>
-                <!-- Search form -->
-                <form class="form-inline ml-auto" method="GET" action="{{ url_for('main.search') }}">
-                    <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-
-        <!-- Main Content Area -->
-        <div class="content">
-            <div class="container mt-4">
-                {% block content %}{% endblock %}
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{{ url_for('main_bp.index') }}">
+            <img src="{{ url_for('static', filename='images/pet_world.png') }}" alt="Pet World Logo" height="50">
+            Pet World
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.index') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.about') }}">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('services_bp.services') }}">Services</a></li>  <!-- Fixed -->
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.products') }}">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.adoptions') }}">Adoptions</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.help_page') }}">Help</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <!-- Footer at the very bottom -->
-        <footer class="footer">
-            <p>&copy; 2024 Pet World. All Rights Reserved.</p>
-        </footer>
+    <!-- Content -->
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
     </div>
 
-    <!-- Include Bootstrap JS and custom template JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Additional JS files from the template -->
-    <script src="{{ url_for('static', filename='js/custom-template.js') }}"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Pet World. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>

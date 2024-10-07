@@ -1,32 +1,29 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template
 
-main = Blueprint('main', __name__)
+# Define the main blueprint
+main_bp = Blueprint('main_bp', __name__)
 
-@main.route('/')
+# Root route
+@main_bp.route('/')
 def index():
     return render_template('index.html')
 
-@main.route('/about')
+# About route
+@main_bp.route('/about')
 def about():
     return render_template('about.html')
 
-@main.route('/services')
-def services():
-    return render_template('services.html')
-
-@main.route('/products')
+# Products route
+@main_bp.route('/products')
 def products():
     return render_template('products.html')
 
-@main.route('/adoptions')
+# Adoptions route
+@main_bp.route('/adoptions')
 def adoptions():
     return render_template('adoptions.html')
 
-@main.route('/help')
+# Help page route
+@main_bp.route('/help_page')
 def help_page():
     return render_template('help.html')
-
-@main.route('/search')
-def search():
-    query = request.args.get('query')
-    return render_template('search_results.html', query=query)
