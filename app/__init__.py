@@ -1,7 +1,8 @@
 from flask import Flask
-from app.routes import main_bp  # Import main routes
-from app.blueprints.services import services_bp  # Import services blueprint
-from app.db_connect import init_app  # Correct import for db_connect
+from app.db_connect import init_app
+from app.blueprints.pets import pets_bp  # Import the pets blueprint
+from app.routes import main_bp  # Assuming your main routes are in app.routes
+from app.blueprints.services import services_bp
 
 def create_app():
     app = Flask(__name__)
@@ -18,6 +19,7 @@ def create_app():
     # Register the services blueprint
     app.register_blueprint(main_bp)  # Register main routes
     app.register_blueprint(services_bp)
+    app.register_blueprint(pets_bp)  # Register the pets blueprint
 
     # Define the root route
     @app.route('/')

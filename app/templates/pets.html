@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">Available Pets for Sale</h1>
+
+    <!-- Display available pets -->
+    <div class="row">
+        {% if pets %}
+            {% for pet in pets %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ pet.name }}</h5>
+                            <p class="card-text">Breed: {{ pet.breed }}</p>
+                            <p class="card-text">Age: {{ pet.age }} years</p>
+                            <p class="card-text">Price: ${{ pet.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No pets available at the moment.</p>
+        {% endif %}
+    </div>
+
+    <!-- Form for adding a new pet -->
+    <div class="mt-5">
+        <h2>Add a New Pet</h2>
+        <form method="POST" action="{{ url_for('main_bp.add_pet') }}">
+            <div class="form-group">
+                <label for="name">Pet Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed:</label>
+                <input type="text" class="form-control" id="breed" name="breed" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price ($):</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Pet</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

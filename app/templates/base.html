@@ -8,6 +8,7 @@
     <!-- Include Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Add custom styles -->
     <style>
         body {
             background-color: white;
@@ -17,6 +18,9 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -35,23 +39,30 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.index') }}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.about') }}">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url_for('services_bp.services') }}">Services</a></li>  <!-- Fixed -->
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('services_bp.services') }}">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.products') }}">Products</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.adoptions') }}">Adoptions</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('pets_bp.pets') }}">Pets</a></li> <!-- Updated for Pets -->
                 <li class="nav-item"><a class="nav-link" href="{{ url_for('main_bp.help_page') }}">Help</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Content -->
+    <!-- Main content area -->
     <div class="container mt-4">
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
 
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Pet World. All Rights Reserved.</p>
     </footer>
+
+    <!-- Include Bootstrap JS and custom JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
